@@ -6,13 +6,21 @@ import { DispatchContext } from './modules/util/dispatch.context.create/Dispatch
 import { StateContext } from './modules/util/state.context.create/StateContext';
 import { useReducer } from 'react';
 import { CurrencyReducer } from './modules/util/reducer.function/CurrencyReducer';
+import { InitialState } from './modules/util/initial.state/InitialState';
 
 export const App = () => {
 
-    const [state, dispatch] = useReducer(CurrencyReducer)
+    const [state, dispatch] = useReducer(CurrencyReducer, InitialState);
+
+    const dispatchValue = { dispatch };
+    const stateValue = { state };
 
     return(
-        <MainPage />
+        <DispatchContext.Provider value={dispatchValue}>
+            <StateContext.Provider value={stateValue}>
+                <MainPage />
+            </StateContext.Provider>
+        </DispatchContext.Provider>
     );
 
 };
