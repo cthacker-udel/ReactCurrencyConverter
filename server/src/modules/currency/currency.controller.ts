@@ -1,4 +1,6 @@
-import { Body, Controller, Get, Post } from "@nestjs/common";
+import { Body, Controller, Get, Post, SetMetadata, UseGuards } from "@nestjs/common";
+import { CurrencyDTO } from "./dto/currency.dto";
+import { CurrencyGuard } from "./guard/currency.guard";
 
 @Controller('currency')
 export class CurrencyController {
@@ -9,6 +11,9 @@ export class CurrencyController {
     };
 
     @Post('set')
-    async serCurrency(@Body() )
+    @UseGuards(CurrencyGuard)
+    async setCurrency(@Body() request: CurrencyDTO ) {
+        
+    }
 
 };
