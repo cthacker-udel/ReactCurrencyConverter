@@ -1,0 +1,24 @@
+{
+  "name": "project1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently --kill-others-on-fail \"cd client && npm run start\" \"cd server && nest start --watch\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cthacker-udel/ReactCurrencyConverter.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cthacker-udel/ReactCurrencyConverter/issues"
+  },
+  "homepage": "https://github.com/cthacker-udel/ReactCurrencyConverter#readme",
+  "dependencies": {
+    "concurrently": "^6.5.1"
+  }
+}

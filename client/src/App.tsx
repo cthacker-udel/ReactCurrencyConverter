@@ -7,6 +7,7 @@ import { StateContext } from './modules/util/state.context.create/StateContext';
 import { useReducer } from 'react';
 import { CurrencyReducer } from './modules/util/reducer.function/CurrencyReducer';
 import { InitialState } from './modules/util/initial.state/InitialState';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 export const App = () => {
 
@@ -16,11 +17,17 @@ export const App = () => {
     const stateValue = { state };
 
     return(
-        <DispatchContext.Provider value={dispatchValue}>
-            <StateContext.Provider value={stateValue}>
-                <MainPage />
-            </StateContext.Provider>
-        </DispatchContext.Provider>
+        <BrowserRouter>
+            <DispatchContext.Provider value={dispatchValue}>
+                <StateContext.Provider value={stateValue}>
+                    <Routes>
+                        <Route path="/" element={<MainPage />} />
+                        <Route path="convert-currency" element={<>Add currency</>} />
+                        <Route path="view-transactions" element={<>Transactions</>} />
+                    </Routes>
+                </StateContext.Provider>
+            </DispatchContext.Provider>
+        </BrowserRouter>
     );
 
 };
