@@ -4,6 +4,7 @@ export const InitialState: State = {
 
     amount: 0,
     currentLocale: 'en-US',
+    currencyFormat: 'USD',
     history: []
 
 };

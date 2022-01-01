@@ -4,6 +4,8 @@ export interface CurrencyHistory {
     from: string
     to: string
     amtBefore: number
+    currencyFormatBefore: string
     amtAfter: number
+    currencyFormatAfter: string
 
 };

@@ -44,7 +44,14 @@ export const MainPage = () => {
                                         {eachHistory.time}
                                     </td>
                                     <td>
-                                        {eachHistory.amtBefore}
+                                        {   new Intl.NumberFormat(eachHistory.from, {
+                                                style: 'currency',
+                                                currency: eachHistory.currencyFormatBefore,
+                                            })
+                                            .format(
+                                                eachHistory.amtBefore
+                                            )
+                                        }
                                     </td>
                                     <td>
                                         {eachHistory.from}

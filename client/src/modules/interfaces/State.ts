@@ -5,5 +5,6 @@ export interface State {
     amount: number
     currentLocale: string
     history: CurrencyHistory[]
+    currencyFormat: string
 
 };
