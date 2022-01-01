@@ -1,6 +1,7 @@
 import React from "react";
 import { Table } from "react-bootstrap";
 import { UseStateContext } from "../util/state.context.use/UseStateContext";
+import { CurrencyNavbar } from "./navbar/CurrencyNavbar";
 
 export const MainPage = () => {
 
@@ -9,6 +10,7 @@ export const MainPage = () => {
     return(
 
         <>
+            <CurrencyNavbar />
             <Table striped bordered hover>
 
                 <thead>

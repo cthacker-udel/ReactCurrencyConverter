@@ -8,6 +8,7 @@ import { useReducer } from 'react';
 import { CurrencyReducer } from './modules/util/reducer.function/CurrencyReducer';
 import { InitialState } from './modules/util/initial.state/InitialState';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export const App = () => {
 
